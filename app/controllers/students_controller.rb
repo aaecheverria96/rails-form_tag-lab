@@ -6,6 +6,14 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
-  end
+  end 
+
+  def new 
+  end 
+
+  def create 
+    Student.create(first name: params[:student][:first_name], last name: params[:student][:last_name])
+    redirect_to students_path
+  end 
 
 end
